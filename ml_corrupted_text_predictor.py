@@ -8,7 +8,7 @@ start_time = time.time()
 model = pickle.load(open('corruption_classification_model.pkl', 'rb'))
 
 # Load a text
-data = pandas.read_csv('data/pergamos_200.csv')
+data = pandas.read_csv('data/pergamos_100.csv')
 data.dropna(subset=['text'], inplace=True)
 
 # Predict the class of the new data
@@ -18,7 +18,7 @@ data['value'] = predictions
 
 print(data.head())
 
-data.to_csv('data/pergamos_200_predicted.csv', index=False)
+data.to_csv('data/pergamos_100_predicted.csv', index=False)
 
 end_time = time.time()
 execution_time = end_time - start_time
